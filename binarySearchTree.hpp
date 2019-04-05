@@ -256,16 +256,16 @@ void BinarySearchTree<T>::printPreorder(Node* root) const{
   if(root == nullptr){ return; }
 
   std::cout << root->key << " ";
-  printInorder(root->left);
-  printInorder(root->right);
+  printPreorder(root->left);
+  printPreorder(root->right);
 }
 
 template<typename T>
 void BinarySearchTree<T>::printPostorder(Node* root) const{
   if(root == nullptr){ return; }
 
-  printInorder(root->left);
-  printInorder(root->right);
+  printPostorder(root->left);
+  printPostorder(root->right);
   std::cout << root->key << " ";
 }
 
@@ -317,7 +317,7 @@ const BinarySearchTree<T>& BinarySearchTree<T>::operator=(const BinarySearchTree
 
 template<typename T>
 const BinarySearchTree<T>& BinarySearchTree<T>::operator=(BinarySearchTree<T>&& tree){
-  swap(*this, tree);
+  swapTree(*this, tree);
   return *this;
 }
 
