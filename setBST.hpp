@@ -52,12 +52,12 @@ public:
   const SetBST<T>& operator=(const SetBST<T>& set);
   const SetBST<T>& operator=(SetBST<T>&& set);
   friend std::ostream& operator<<(std::ostream& output, const SetBST<T> &set){
-    return output << set.tree_;
+    return output << set.bst_;
   }
 
   SetBST():bst_(){}
   SetBST(const SetBST<T>& set) = default;
-  SetBST(SetBST&& set) noexcept = default;
+  SetBST(SetBST<T>&& set) noexcept = default;
   ~SetBST() = default;
 };
 
@@ -197,7 +197,7 @@ const SetBST<T>& SetBST<T>::operator=(const SetBST<T>& set){
 
 template <typename T>
 const SetBST<T>& SetBST<T>::operator=(SetBST<T>&& set){
-  swap(*this, set);
+  swapSet(*this, set);
   return *this;
 }
 
