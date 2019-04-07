@@ -14,7 +14,7 @@ public:
     const SetBST<T>* set_;
     typename BinarySearchTree<T>::Node* node_;
 
-    Iterator(const SetBST<T>* set, typename BinarySearchTree<T>::Node* node): set_(set), node_(node){}
+    Iterator(const SetBST<T>* set, typename BinarySearchTree<T>::Node* node):set_(set), node_(node){}
   public:
     bool operator==(const Iterator &it) const;
     bool operator!=(const Iterator &it) const;
