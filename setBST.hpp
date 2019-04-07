@@ -174,7 +174,7 @@ typename SetBST<T>::Iterator SetBST<T>::begin() const{
     }else if(root->right != nullptr){
       root = root->right;
     }else{
-      return SetBST<T>::Iterator(this, root);
+      return Iterator(this, root);
     }
   }
 }
