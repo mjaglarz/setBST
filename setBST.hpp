@@ -5,7 +5,7 @@
 #include <stack>
 #include "binarySearchTree.hpp"
 
-template<typename T = int>
+template <typename T = int>
 class SetBST{
 public:
   class Iterator{
@@ -121,7 +121,7 @@ const T* SetBST<T>::Iterator::operator->() const{
   return &node_->key;
 }
 
-template<typename T>
+template <typename T>
 std::pair<typename SetBST<T>::Iterator, bool> SetBST<T>::insert(const T& x){
   if(bst_.find(x) != nullptr){
     return std::make_pair(Iterator(this, nullptr), false);
@@ -131,32 +131,32 @@ std::pair<typename SetBST<T>::Iterator, bool> SetBST<T>::insert(const T& x){
   }
 }
 
-template<typename T>
+template <typename T>
 bool SetBST<T>::remove(const T& x){
   return bst_.remove(x);
 }
 
-template<typename T>
+template <typename T>
 typename SetBST<T>::Iterator SetBST<T>::find(const T& x){
   return Iterator(this, bst_.search(x));
 }
 
-template<typename T>
+template <typename T>
 const T* SetBST<T>::find(const T& x) const{
   return bst_.findRec(x);
 }
 
-template<typename T>
+template <typename T>
 std::size_t SetBST<T>::size() const{
   return bst_.size();
 }
 
-template<typename T>
+template <typename T>
 bool SetBST<T>::empty() const{
  return bst_.empty();
 }
 
-template<typename T>
+template <typename T>
 void SetBST<T>::swapSet(SetBST<T>& first, SetBST<T>& second){
   std::swap(first.bst_, second.bst_);
   second.bst_ = nullptr;
@@ -185,7 +185,7 @@ typename SetBST<T>::Iterator SetBST<T>::end() const{
   return Iterator(this, nullptr);
 }
 
-template<typename T>
+template <typename T>
 const SetBST<T>& SetBST<T>::operator=(const SetBST<T>& set){
   if(this != &set){
     bst_.freeMemory(bst_.rootPointer());
