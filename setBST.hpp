@@ -51,7 +51,7 @@ public:
 
   const SetBST<T>& operator=(const SetBST<T>& set);
   const SetBST<T>& operator=(SetBST<T>&& set);
-  friend std::ostream& operator<<(std::ostream& output, const SetBST<T>& set){
+  friend std::ostream& operator<<(std::ostream& output, const SetBST<T> &set){
     return output << set.bst_;
   }
 
@@ -174,7 +174,7 @@ typename SetBST<T>::Iterator SetBST<T>::begin() const{
     }else if(root->right != nullptr){
       root = root->right;
     }else{
-      return typename SetBST<T>::Iterator(this, root);
+      return SetBST<T>::Iterator(this, root);
     }
   }
 }
