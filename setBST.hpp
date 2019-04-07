@@ -51,7 +51,7 @@ public:
 
   const SetBST<T>& operator=(const SetBST<T>& set);
   const SetBST<T>& operator=(SetBST<T>&& set);
-  friend std::ostream& operator<<(std::ostream& output, const SetBST<T> &set){
+  friend std::ostream& operator<<(std::ostream& output, const SetBST<T>& set){
     return output << set.bst_;
   }
 
