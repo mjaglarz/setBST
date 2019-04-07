@@ -119,6 +119,7 @@ const T* SetBST<T>::Iterator::operator->() const{
   return &node_->key;
 }
 
+
 template <typename T>
 std::pair<typename SetBST<T>::Iterator, bool> SetBST<T>::insert(const T& x){
   if(bst_.find(x) != nullptr){
