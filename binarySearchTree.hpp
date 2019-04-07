@@ -37,7 +37,7 @@ public:
 
   const BinarySearchTree<T>& operator=(const BinarySearchTree<T>& tree);
   const BinarySearchTree<T>& operator=(BinarySearchTree<T>&& tree);
-  friend std::ostream& operator<<(std::ostream& output, const BinarySearchTree<T> &tree){
+  friend std::ostream& operator<<(std::ostream& output, const BinarySearchTree<T>& tree){
     tree.print(output, tree.root_); return output << "\n";
   }
 
