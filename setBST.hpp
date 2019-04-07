@@ -81,7 +81,6 @@ typename SetBST<T>::Iterator& SetBST<T>::Iterator::operator++(){
     while(node_->left != nullptr){
       node_ = node_->left;
     }
-
     return *this;
   }
 
