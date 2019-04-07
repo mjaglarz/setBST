@@ -78,7 +78,6 @@ typename SetBST<T>::Iterator& SetBST<T>::Iterator::operator++(){
     if(node_ == nullptr){
        throw "Set is empty";
     }
-
     while(node_->left != nullptr){
       node_ = node_->left;
     }
