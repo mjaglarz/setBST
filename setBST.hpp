@@ -16,8 +16,8 @@ public:
 
     Iterator(const SetBST<T>* set, typename BinarySearchTree<T>::Node* node):set_(set), node_(node){}
   public:
-    bool operator==(const Iterator &it) const;
-    bool operator!=(const Iterator &it) const;
+    bool operator==(const Iterator& it) const;
+    bool operator!=(const Iterator& it) const;
     Iterator& operator++();
     Iterator operator++(int);
     const T& operator*() const;
@@ -67,7 +67,7 @@ bool SetBST<T>::Iterator::operator==(const Iterator& it) const{
 }
 
 template <typename T>
-bool SetBST<T>::Iterator::operator!=(const Iterator &it) const{
+bool SetBST<T>::Iterator::operator!=(const Iterator& it) const{
   return !(*this == it);
 }
 
