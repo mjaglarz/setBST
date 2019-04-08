@@ -12,7 +12,7 @@ void printDebugInfo(const std::pair<Iterator, bool> &insertInfo){
 
 template <typename Iterator>
 void printDebugInfo(const Iterator &findInfo){
-  std::cout << (findInfo ? "Found " + std::to_string(*findInfo) : "Couldn't find an element.") << endl;
+  cout << (findInfo ? "Found " + std::to_string(*findInfo) : "Couldn't find an element.") << endl;
 }
 
 int main(int argc, char* argv[]){
