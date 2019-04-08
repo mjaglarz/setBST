@@ -2,7 +2,7 @@ Implementation of Set on my own BST in C++
 ============================
 * on templates
 * with copy/move constructors and assignment operators
-* with custom forward iterator (using a parent-pointer in the node)
+* with custom forward iterator (using function to find parent of a node)
 
 ## Operations:
 - insertion 
