@@ -9,7 +9,7 @@ Implementation of Set on my own BST in C++
 - deletion
 - find (iterative - returning an iterator and recursive)
 - iterators to begin and end
-- size/isEmpty
+- size/empty
 - print (overloaded output operator)
 
 ## Operations for custom iterator:
