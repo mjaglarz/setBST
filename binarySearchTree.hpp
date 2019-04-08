@@ -16,7 +16,7 @@ public:
 
   T* insert(const T& x){ return insert(root_, x); }
   bool remove(const T& x);
-  Node* search(const T& x){ return search(root_, x); }
+  Node* search(const T& x) const { return search(root_, x); }
   T* find(const T& x){ return find(root_, x); }
   const T* findRec(const T& x) const { return findRec(root_, x); }
   Node* findParent(const T& x) const { return findParent(root_, x); }
@@ -52,7 +52,7 @@ private:
 
   T* insert(Node* root, const T& x);
   Node* remove(Node* root, const T& x);
-  Node* search(Node* root, const T& x);
+  Node* search(Node* root, const T& x) const;
   T* find(Node* root, const T& x) const;
   const T* findRec(Node* root, const T& x) const;
   Node* findParent(Node* root, const T& x) const;
@@ -72,21 +72,21 @@ T* BinarySearchTree<T>::insert(Node* root, const T& x){
     return &root_->key;
   }
 
-  if(x <= root->key){
-    if(root->left != nullptr){
-      insert(root->left, x);
-    }else{
-      root->left = new Node(x);
-      size_++;
-      return &root->left->key;
-    }
-  }else if(x > root->key){
+  if(x > root->key){
     if(root->right != nullptr){
       insert(root->right, x);
     }else{
       root->right = new Node(x);
       size_++;
       return &root->right->key;
+    }
+  }else{
+    if(root->left != nullptr){
+      insert(root->left, x);
+    }else{
+      root->left = new Node(x);
+      size_++;
+      return &root->left->key;
     }
   }
 
@@ -124,6 +124,7 @@ typename BinarySearchTree<T>::Node* BinarySearchTree<T>::remove(Node* root, cons
     root->key = temp->key;
     root->right = remove(root->right, temp->key);
   }
+
   return root;
 }
 
@@ -135,7 +136,7 @@ bool BinarySearchTree<T>::remove(const T& x){
 }
 
 template <typename T>
-typename BinarySearchTree<T>::Node* BinarySearchTree<T>::search(Node* root, const T& x){
+typename BinarySearchTree<T>::Node* BinarySearchTree<T>::search(Node* root, const T& x) const{
   while(root != nullptr){
     if(root->key == x){
       return root;
@@ -312,6 +313,7 @@ const BinarySearchTree<T>& BinarySearchTree<T>::operator=(const BinarySearchTree
     root_ = nullptr;
     copyTree(tree.root_);
   }
+  
   return *this;
 }
 
