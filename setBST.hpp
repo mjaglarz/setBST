@@ -2,7 +2,6 @@
 #define SETBST_H
 
 #include <iostream>
-#include <stack>
 #include "binarySearchTree.hpp"
 
 template <typename T = int>
